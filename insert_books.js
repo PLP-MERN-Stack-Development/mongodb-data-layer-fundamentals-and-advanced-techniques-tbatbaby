@@ -1,16 +1,11 @@
 // insert_books.js - Script to populate MongoDB with sample book data
 
-// Import MongoDB client
 const { MongoClient } = require('mongodb');
 
-// Connection URI (replace with your MongoDB connection string if using Atlas)
-const uri = 'mongodb://localhost:27017';
-
-// Database and collection names
+const MONGO_URI = 'mongodb+srv://MERN-STACK:2XA6Sz7Pawsn33T5@cluster0.ehm7thj.mongodb.net/?appName=Cluster0';
 const dbName = 'plp_bookstore';
 const collectionName = 'books';
 
-// Sample book data
 const books = [
   {
     title: 'To Kill a Mockingbird',
@@ -131,19 +126,46 @@ const books = [
     in_stock: true,
     pages: 342,
     publisher: 'Thomas Cautley Newby'
+  },
+  {
+    title: 'Harry Potter and the Philosopher\'s Stone',
+    author: 'J.K. Rowling',
+    genre: 'Fantasy',
+    published_year: 1997,
+    price: 13.99,
+    in_stock: true,
+    pages: 320,
+    publisher: 'Bloomsbury'
+  },
+  {
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    genre: 'Dystopian',
+    published_year: 2008,
+    price: 11.99,
+    in_stock: true,
+    pages: 374,
+    publisher: 'Scholastic'
+  },
+  {
+    title: 'The Da Vinci Code',
+    author: 'Dan Brown',
+    genre: 'Mystery',
+    published_year: 2003,
+    price: 12.50,
+    in_stock: false,
+    pages: 454,
+    publisher: 'Doubleday'
   }
 ];
 
-// Function to insert books into MongoDB
 async function insertBooks() {
-  const client = new MongoClient(uri);
+  const client = new MongoClient(MONGO_URI);
 
   try {
-    // Connect to the MongoDB server
     await client.connect();
     console.log('Connected to MongoDB server');
 
-    // Get database and collection
     const db = client.db(dbName);
     const collection = db.collection(collectionName);
 
@@ -169,7 +191,6 @@ async function insertBooks() {
   } catch (err) {
     console.error('Error occurred:', err);
   } finally {
-    // Close the connection
     await client.close();
     console.log('Connection closed');
   }
@@ -177,22 +198,3 @@ async function insertBooks() {
 
 // Run the function
 insertBooks().catch(console.error);
-
-/*
- * Example MongoDB queries you can try after running this script:
- *
- * 1. Find all books:
- *    db.books.find()
- *
- * 2. Find books by a specific author:
- *    db.books.find({ author: "George Orwell" })
- *
- * 3. Find books published after 1950:
- *    db.books.find({ published_year: { $gt: 1950 } })
- *
- * 4. Find books in a specific genre:
- *    db.books.find({ genre: "Fiction" })
- *
- * 5. Find in-stock books:
- *    db.books.find({ in_stock: true })
- */ 

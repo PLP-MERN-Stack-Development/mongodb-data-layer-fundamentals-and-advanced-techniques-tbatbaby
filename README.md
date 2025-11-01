@@ -1,50 +1,30 @@
-# MongoDB Fundamentals - Week 1
+# PLP Bookstore - MongoDB Assignment Week 1
 
-## Setup Instructions
+## 📚 Project Description
+This project demonstrates MongoDB fundamentals including CRUD operations, advanced queries, aggregation pipelines, and indexing for the PLP Bookstore database.
 
-Before you begin this assignment, please make sure you have the following installed:
+## 🛠️ Setup Instructions
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+### Prerequisites
+- Node.js (v18 or higher)
+- MongoDB (local installation or Atlas cluster)
+- MongoDB Shell (mongosh) or MongoDB Compass
 
-### Node.js Package Setup
+### Installation Steps
 
-Once you have Node.js installed, run the following commands in your assignment directory:
-
-```bash
-# Initialize a package.json file
-npm init -y
-
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
-
-## Assignment Overview
-
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
-
-## Submission
-
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
-
-## Getting Started
-
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+1. **Clone the repository**
+   ```bash
+   git clone <your-repository-url>
+   cd <repository-folder>
 
 ## Files Included
 
 - `Week1-Assignment.md`: Detailed assignment instructions
 - `insert_books.js`: Script to populate your MongoDB database with sample book data
+- `queries.js` : Complete solutions to all assignment tasks.
+- `package.json` : 
+- `README.md` :
+- `SETUP_INSTRUCTIONS.md`
 
 ## Requirements
 
